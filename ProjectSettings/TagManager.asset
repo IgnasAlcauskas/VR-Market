@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Movable Floor
+  - DeleteNpc
   layers:
   - Default
   - TransparentFX
