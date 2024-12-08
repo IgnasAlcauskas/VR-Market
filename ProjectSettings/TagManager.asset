@@ -8,6 +8,7 @@ TagManager:
   - Movable Floor
   - DeleteNpc
   - Snappable
+  - LineNPC
   layers:
   - Default
   - TransparentFX
