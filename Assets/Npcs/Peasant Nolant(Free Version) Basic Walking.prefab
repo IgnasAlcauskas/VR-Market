@@ -1107,6 +1107,8 @@ GameObject:
   - component: {fileID: 2888074106163707201}
   - component: {fileID: 4848089632983093650}
   - component: {fileID: 2664770998754258975}
+  - component: {fileID: -3754579174510907692}
+  - component: {fileID: 5075213391851181446}
   m_Layer: 0
   m_Name: Peasant Nolant(Free Version) Basic Walking
   m_TagString: Untagged
@@ -1215,6 +1217,84 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3754579174510907692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073860416479520768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e547c6981d1904dab1e7fd5069db69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestedItem: 
+  itemPrice: 0
+  uiPrefab: {fileID: 8376815396704890778, guid: 41cb89370e24f2843b1906f356cb007e,
+    type: 3}
+  itemsForSale:
+  - itemName: Blue Book
+    itemPrice: 10
+  - itemName: Red Book
+    itemPrice: 15
+  - itemName: Black Book
+    itemPrice: 25
+  - itemName: Camera
+    itemPrice: 30
+  - itemName: Gaming Console
+    itemPrice: 50
+  - itemName: Gaming Controller
+    itemPrice: 10
+  - itemName: Phone
+    itemPrice: 100
+  - itemName: Cap
+    itemPrice: 15
+  - itemName: Captain Hat
+    itemPrice: 30
+  - itemName: Straw Hat
+    itemPrice: 15
+  - itemName: Top Hat
+    itemPrice: 40
+  - itemName: Black Notebook
+    itemPrice: 10
+  - itemName: Fancy Notebook
+    itemPrice: 20
+  - itemName: Boombox
+    itemPrice: 45
+  - itemName: Cricket Ball
+    itemPrice: 5
+  - itemName: Tennis Ball
+    itemPrice: 5
+  - itemName: Tennis Racket
+    itemPrice: 10
+  - itemName: PingPong Paddle
+    itemPrice: 10
+  - itemName: Cricket Bat
+    itemPrice: 10
+  - itemName: PingPong Ball
+    itemPrice: 5
+--- !u!65 &5075213391851181446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073860416479520768}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.45, z: 0.1}
 --- !u!1 &6217018856580183847
 GameObject:
   m_ObjectHideFlags: 0

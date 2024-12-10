@@ -9,6 +9,11 @@ TagManager:
   - DeleteNpc
   - Snappable
   - LineNPC
+  - Sports
+  - Electronics
+  - Hats
+  - Books
+  - Socket
   layers:
   - Default
   - TransparentFX
@@ -17,10 +22,10 @@ TagManager:
   - Water
   - UI
   - ForSale
-  - 
-  - 
-  - 
-  - 
+  - Electronics
+  - Sports
+  - Books
+  - Hats
   - 
   - 
   - 
