@@ -7,6 +7,7 @@ using TMPro;
 public class IncomeTracker : MonoBehaviour
 {
     public TMP_Text moneyText; // Drag and drop the TextMeshPro component in the Inspector
+    public string playerTag = "Player"; // Tag used to identify the player
 
     private void Start()
     {
@@ -16,6 +17,9 @@ public class IncomeTracker : MonoBehaviour
             Debug.LogError("MoneyText is not assigned!");
             return;
         }
+
+        // Initially, make the text invisible
+        //moneyText.gameObject.SetActive(false);
 
         // Update the UI with the current money at the start
         UpdateMoneyDisplay(Income.Instance.GetMoney());
@@ -30,9 +34,12 @@ public class IncomeTracker : MonoBehaviour
         Income.Instance.OnMoneyChanged -= UpdateMoneyDisplay;
     }
 
-    // This method will be called whenever the money changes
     private void UpdateMoneyDisplay(int newMoneyAmount)
     {
-        moneyText.text = $"Money: {newMoneyAmount}";
+        if (moneyText != null)
+        {
+            moneyText.text = $"{newMoneyAmount} coins";
+        }
     }
+
 }

@@ -12,7 +12,7 @@ public class NPCRequestUI : MonoBehaviour
     {
         if (requestText != null)
         {
-            requestText.text = $"I want: {itemName}";
+            requestText.text = $"I want a {itemName}";
         }
     }
 }

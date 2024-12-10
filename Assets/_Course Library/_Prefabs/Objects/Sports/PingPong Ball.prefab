@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8352775352795155936}
   - component: {fileID: 6402531179198907298}
   - component: {fileID: 4628453828348344093}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: PingPong Ball
-  m_TagString: Books
+  m_TagString: Sports
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

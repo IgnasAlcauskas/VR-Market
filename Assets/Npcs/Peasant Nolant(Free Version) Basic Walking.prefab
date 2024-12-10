@@ -1235,44 +1235,64 @@ MonoBehaviour:
     type: 3}
   itemsForSale:
   - itemName: Blue Book
+    layerName: Books
     itemPrice: 10
   - itemName: Red Book
+    layerName: Books
     itemPrice: 15
   - itemName: Black Book
+    layerName: Books
     itemPrice: 25
   - itemName: Camera
+    layerName: Electronics
     itemPrice: 30
   - itemName: Gaming Console
+    layerName: Electronics
     itemPrice: 50
   - itemName: Gaming Controller
+    layerName: Electronics
     itemPrice: 10
   - itemName: Phone
+    layerName: Electronics
     itemPrice: 100
   - itemName: Cap
+    layerName: Hats
     itemPrice: 15
   - itemName: Captain Hat
+    layerName: Hats
     itemPrice: 30
   - itemName: Straw Hat
+    layerName: Hats
     itemPrice: 15
   - itemName: Top Hat
+    layerName: Hats
     itemPrice: 40
   - itemName: Black Notebook
+    layerName: Books
     itemPrice: 10
   - itemName: Fancy Notebook
+    layerName: Books
     itemPrice: 20
   - itemName: Boombox
+    layerName: Electronics
     itemPrice: 45
   - itemName: Cricket Ball
+    layerName: Sports
     itemPrice: 5
   - itemName: Tennis Ball
+    layerName: Sports
     itemPrice: 5
   - itemName: Tennis Racket
+    layerName: Sports
     itemPrice: 10
   - itemName: PingPong Paddle
+    layerName: Sports
     itemPrice: 10
   - itemName: Cricket Bat
+    layerName: Sports
     itemPrice: 10
   - itemName: PingPong Ball
+    layerName: Sports
     itemPrice: 5
 --- !u!65 &5075213391851181446
 BoxCollider:

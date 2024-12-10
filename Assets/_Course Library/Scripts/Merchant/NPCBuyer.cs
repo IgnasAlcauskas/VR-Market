@@ -50,6 +50,13 @@ public class NPCBuyer : MonoBehaviour
         itemPrice = selectedItem.itemPrice;
 
         Debug.Log($"{gameObject.name} is requesting: {requestedItem} for {itemPrice} coins.");
+
+        int itemLayer = LayerMask.NameToLayer(selectedItem.layerName); // Ensure ItemData has a 'layerName' property
+        if (!RandomSpawn.spawnedLayers.Contains(itemLayer))
+        {
+            itemPrice = Mathf.CeilToInt(itemPrice * 1.5f);
+            Debug.Log($"{gameObject.name} is requesting a rare item ({requestedItem}). Price increased to {itemPrice} coins.");
+        }
     }
 
     private void SpawnRequestUI()

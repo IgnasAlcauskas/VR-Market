@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5453501517163380606}
   - component: {fileID: -2736355181109373069}
   - component: {fileID: -6536043645713221685}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Tennis Ball
-  m_TagString: Books
+  m_TagString: Sports
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

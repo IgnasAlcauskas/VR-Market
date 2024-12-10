@@ -6,5 +6,6 @@ using UnityEngine;
 public class ItemData
 {
     public string itemName; // Name of the item
+    public string layerName; // Name of the items layer
     public int itemPrice;   // Price of the item
 }

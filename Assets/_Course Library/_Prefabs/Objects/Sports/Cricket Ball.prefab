@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 4510120244565983030}
   - component: {fileID: 7500256613205580141}
   - component: {fileID: 5146697715036182613}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cricket Ball
-  m_TagString: Books
+  m_TagString: Sports
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
