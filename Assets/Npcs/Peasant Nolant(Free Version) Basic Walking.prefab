@@ -1169,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   inLine: 0
+  canEnterLine: 1
 --- !u!65 &4848089632983093650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1235,65 +1236,104 @@ MonoBehaviour:
     type: 3}
   itemsForSale:
   - itemName: Blue Book
+    itemTag: Books
     layerName: Books
     itemPrice: 10
+    isAvailable: 1
   - itemName: Red Book
+    itemTag: Books
     layerName: Books
     itemPrice: 15
+    isAvailable: 1
   - itemName: Black Book
+    itemTag: Books
     layerName: Books
     itemPrice: 25
+    isAvailable: 0
   - itemName: Camera
+    itemTag: Electronics
     layerName: Electronics
     itemPrice: 30
+    isAvailable: 1
   - itemName: Gaming Console
+    itemTag: Electronics
     layerName: Electronics
     itemPrice: 50
+    isAvailable: 0
   - itemName: Gaming Controller
+    itemTag: Electronics
     layerName: Electronics
     itemPrice: 10
+    isAvailable: 0
   - itemName: Phone
+    itemTag: Electronics
     layerName: Electronics
     itemPrice: 100
+    isAvailable: 0
   - itemName: Cap
+    itemTag: Hats
     layerName: Hats
     itemPrice: 15
+    isAvailable: 1
   - itemName: Captain Hat
+    itemTag: Hats
     layerName: Hats
     itemPrice: 30
+    isAvailable: 0
   - itemName: Straw Hat
+    itemTag: Hats
     layerName: Hats
     itemPrice: 15
+    isAvailable: 1
   - itemName: Top Hat
+    itemTag: Hats
     layerName: Hats
     itemPrice: 40
+    isAvailable: 0
   - itemName: Black Notebook
+    itemTag: Books
     layerName: Books
     itemPrice: 10
+    isAvailable: 1
   - itemName: Fancy Notebook
+    itemTag: Books
     layerName: Books
     itemPrice: 20
+    isAvailable: 0
   - itemName: Boombox
+    itemTag: Electronics
     layerName: Electronics
     itemPrice: 45
+    isAvailable: 0
   - itemName: Cricket Ball
+    itemTag: Sports
     layerName: Sports
     itemPrice: 5
+    isAvailable: 0
   - itemName: Tennis Ball
+    itemTag: Sports
     layerName: Sports
     itemPrice: 5
+    isAvailable: 1
   - itemName: Tennis Racket
+    itemTag: Sports
     layerName: Sports
     itemPrice: 10
+    isAvailable: 1
   - itemName: PingPong Paddle
+    itemTag: Sports
     layerName: Sports
     itemPrice: 10
-  - itemName: Cricket Bat
-    layerName: Sports
-    itemPrice: 10
+    isAvailable: 0
   - itemName: PingPong Ball
+    itemTag: Sports
     layerName: Sports
     itemPrice: 5
+    isAvailable: 0
+  specialItemTag: BeatStick
+  penaltyAmount: 10
+  tableItemChecker: {fileID: 0}
+  priceMultiplier: 1.5
 --- !u!65 &5075213391851181446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1313,8 +1353,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1.45, z: 0.1}
+  m_Size: {x: 0.75, y: 1, z: 0.75}
+  m_Center: {x: 0, y: 1.45, z: 0.05}
 --- !u!1 &6217018856580183847
 GameObject:
   m_ObjectHideFlags: 0

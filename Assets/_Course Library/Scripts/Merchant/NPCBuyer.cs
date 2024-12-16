@@ -14,10 +14,24 @@ public class NPCBuyer : MonoBehaviour
     [Header("Item Prices")]
     public List<ItemData> itemsForSale; // List of items and their prices
 
+    [Header("Special Exit Item")]
+    public string specialItemTag = "BeatStick"; // The tag of the item that triggers an early exit
+    public int penaltyAmount = 10; // Coins deducted when the special item is used
+
+    [Header("Tables and Item Checker")]
+    [SerializeField]
+    public TableItemChecker tableItemChecker;  // Reference to the TableItemChecker script
+    public float priceMultiplier = 1.5f; // Multiplier for items not found on the table
+
     private BasicWalkScript walkScript;
 
     private void Start()
     {
+        if (tableItemChecker == null)
+        {
+            tableItemChecker = FindObjectOfType<TableItemChecker>();
+        }
+        
         walkScript = GetComponent<BasicWalkScript>();
         if (walkScript == null)
         {
@@ -36,27 +50,50 @@ public class NPCBuyer : MonoBehaviour
 
     private void ChooseItem()
     {
-        if (itemsForSale.Count == 0)
+        if (itemsForSale == null || itemsForSale.Count == 0)
         {
-            Debug.LogError("No items available for sale!");
+            Debug.LogError($"{gameObject.name}: No items available for sale!");
             return;
         }
 
-        // Randomly select an item
-        int randomIndex = Random.Range(0, itemsForSale.Count);
-        ItemData selectedItem = itemsForSale[randomIndex];
+        // Filter items to include only those marked as available
+        List<ItemData> availableItems = itemsForSale.FindAll(item => item.isAvailable);
+
+        if (availableItems.Count == 0)
+        {
+            Debug.LogError($"{gameObject.name}: No available items to choose from!");
+            return;
+        }
+
+        // Randomly select an item from the filtered list
+        int randomIndex = Random.Range(0, availableItems.Count);
+        ItemData selectedItem = availableItems[randomIndex];
 
         requestedItem = selectedItem.itemName;
         itemPrice = selectedItem.itemPrice;
 
-        Debug.Log($"{gameObject.name} is requesting: {requestedItem} for {itemPrice} coins.");
-
-        int itemLayer = LayerMask.NameToLayer(selectedItem.layerName); // Ensure ItemData has a 'layerName' property
-        if (!RandomSpawn.spawnedLayers.Contains(itemLayer))
+        // Check if the item type (layer/tag) is on the table
+        if (!IsItemTypeOnTable(selectedItem))
         {
-            itemPrice = Mathf.CeilToInt(itemPrice * 1.5f);
+            // If not, increase the price
+            itemPrice = Mathf.CeilToInt(itemPrice * priceMultiplier);
             Debug.Log($"{gameObject.name} is requesting a rare item ({requestedItem}). Price increased to {itemPrice} coins.");
         }
+
+        Debug.Log($"{gameObject.name} is requesting: {requestedItem} for {itemPrice} coins.");
+    }
+
+    private bool IsItemTypeOnTable(ItemData selectedItem)
+    {
+        // Check if any item type (layer or tag) is on the table
+        List<string> rememberedTags = tableItemChecker.GetRememberedTags();
+        List<int> rememberedLayers = tableItemChecker.GetRememberedLayers();
+
+        // Check if the tag or layer of the requested item is in the list of items on the table
+        bool isTagOnTable = rememberedTags.Contains(selectedItem.itemTag);
+        bool isLayerOnTable = rememberedLayers.Contains(LayerMask.NameToLayer(selectedItem.layerName));
+
+        return isTagOnTable || isLayerOnTable;
     }
 
     private void SpawnRequestUI()
@@ -70,21 +107,28 @@ public class NPCBuyer : MonoBehaviour
         }
     }
 
-    // This method will be called when an item is placed near the NPC's head
     private void OnTriggerEnter(Collider other)
     {
-        Item item = other.GetComponent<Item>();  // Assuming 'Item' has a reference to the item name
-        if (item != null)
+                // Check for the special item
+        if (other.CompareTag(specialItemTag))
         {
-            // Check if the item matches the requested item
-            if (item.itemName == requestedItem)
+            HandleSpecialItem(other.gameObject);
+        }
+        else
+        {
+            Item item = other.GetComponent<Item>(); // Assuming 'Item' has a reference to the item name
+            if (item != null)
             {
-                // NPC receives the item
-                ReceiveItem(item);
-            }
-            else
-            {
-                 Debug.Log($"{gameObject.name} says: 'This isn't what I asked for!'");
+                // Check if the item matches the requested item
+                if (item.itemName == requestedItem)
+                {
+                    // NPC receives the item
+                    ReceiveItem(item);
+                }
+                else
+                {
+                    Debug.Log($"{gameObject.name} says: 'This isn't what I asked for!'");
+                }
             }
         }
     }
@@ -113,5 +157,27 @@ public class NPCBuyer : MonoBehaviour
         // Destroy the item
         Destroy(item.gameObject);
     }
+
+    private void HandleSpecialItem(GameObject specialItem)
+    {
+        Debug.Log($"{gameObject.name} encountered the special item: {specialItem.name}. NPC leaving!");
+
+        // Deduct penalty coins
+        Income.Instance.RemoveMoney(penaltyAmount);
+        Debug.Log($"Player lost {penaltyAmount} coins. Current money: {Income.Instance.currentMoney}");
+
+        // Destroy the request UI
+        if (activeUI != null)
+        {
+            Destroy(activeUI);
+        }
+
+        // Notify NPC to leave
+        if (walkScript != null)
+        {
+            walkScript.GetOutOfLine();
+        }
+    }
 }
+
 

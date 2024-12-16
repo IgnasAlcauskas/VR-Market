@@ -26,6 +26,15 @@ public class Income : MonoBehaviour
         OnMoneyChanged?.Invoke(currentMoney);
     }
 
+    public void RemoveMoney(int amount)
+    {
+        currentMoney -= amount;
+        Debug.Log($"Player now has {currentMoney} coins!");
+
+        // Trigger the event when money changes
+        OnMoneyChanged?.Invoke(currentMoney);
+    }
+
     public int GetMoney()
     {
         return currentMoney;

@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Straw Hat
   itemValue: 15
+  itemAvailable: 1
+  itemCost: 25
 --- !u!1 &3208621659015093958
 GameObject:
   m_ObjectHideFlags: 0

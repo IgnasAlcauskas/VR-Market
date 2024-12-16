@@ -301,3 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Red Book
   itemValue: 15
+  itemAvailable: 1
+  itemCost: 25

@@ -439,3 +439,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Camera
   itemValue: 30
+  itemAvailable: 1
+  itemCost: 60

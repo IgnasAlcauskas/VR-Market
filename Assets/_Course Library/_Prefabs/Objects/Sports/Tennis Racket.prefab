@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tennis Racket
   itemValue: 10
+  itemAvailable: 1
+  itemCost: 30
 --- !u!1 &2955115175501312168
 GameObject:
   m_ObjectHideFlags: 0

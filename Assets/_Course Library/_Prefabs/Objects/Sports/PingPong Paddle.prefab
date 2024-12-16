@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: PingPong Paddle
   itemValue: 10
+  itemAvailable: 0
+  itemCost: 30
 --- !u!1 &4467998045467979591
 GameObject:
   m_ObjectHideFlags: 0

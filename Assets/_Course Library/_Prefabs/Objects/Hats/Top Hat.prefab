@@ -333,3 +333,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Top Hat
   itemValue: 40
+  itemAvailable: 0
+  itemCost: 100

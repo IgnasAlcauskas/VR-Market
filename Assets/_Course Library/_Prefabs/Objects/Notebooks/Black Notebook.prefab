@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Notebook
   itemValue: 10
+  itemAvailable: 1
+  itemCost: 20
 --- !u!1 &8757627581427121588
 GameObject:
   m_ObjectHideFlags: 0

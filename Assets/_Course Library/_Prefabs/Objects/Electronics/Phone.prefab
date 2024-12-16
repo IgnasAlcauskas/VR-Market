@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Phone
   itemValue: 100
+  itemAvailable: 0
+  itemCost: 300
 --- !u!1 &6269127214302631191
 GameObject:
   m_ObjectHideFlags: 0

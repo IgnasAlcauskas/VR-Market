@@ -665,6 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Gaming Controller
   itemValue: 10
+  itemAvailable: 0
+  itemCost: 30
 --- !u!1 &5887320655587156862
 GameObject:
   m_ObjectHideFlags: 0

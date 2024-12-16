@@ -301,3 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Blue Book
   itemValue: 10
+  itemAvailable: 1
+  itemCost: 15

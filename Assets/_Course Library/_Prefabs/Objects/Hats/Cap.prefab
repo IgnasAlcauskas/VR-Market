@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cap
   itemValue: 15
+  itemAvailable: 1
+  itemCost: 30
 --- !u!1 &5649160131517032500
 GameObject:
   m_ObjectHideFlags: 0

@@ -301,3 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tennis Ball
   itemValue: 5
+  itemAvailable: 1
+  itemCost: 10

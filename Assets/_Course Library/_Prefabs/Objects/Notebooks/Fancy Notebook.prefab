@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Fancy Notebook
   itemValue: 20
+  itemAvailable: 0
+  itemCost: 30
 --- !u!1 &7958769061475812472
 GameObject:
   m_ObjectHideFlags: 0

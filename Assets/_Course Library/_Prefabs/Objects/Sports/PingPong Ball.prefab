@@ -301,3 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: PingPong Ball
   itemValue: 5
+  itemAvailable: 0
+  itemCost: 15

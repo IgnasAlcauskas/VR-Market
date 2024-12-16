@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25215064987929806}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,10 +45,9 @@ GameObject:
   - component: {fileID: 6208031765734242075}
   - component: {fileID: 5014156674306767998}
   - component: {fileID: 1186914192085669173}
-  - component: {fileID: 8443933998523806810}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Cricket Bat
-  m_TagString: Sports
+  m_TagString: BeatStick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,7 +185,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 33
+    m_Bits: 65
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -320,17 +319,3 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &8443933998523806810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3810172710843480761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df859bc123d48d44f832ba10b0a11892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Cricket Bat
-  itemValue: 10

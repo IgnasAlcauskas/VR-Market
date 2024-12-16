@@ -10,9 +10,31 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private float spawnRadius = 0.5f; // Minimum distance between spawned objects
     [SerializeField] private LayerMask objectLayer; // Layer for spawned objects
 
+    private List<GameObject> availablePrefabs; // Filtered list of available prefabs
+
     void Start()
     {
+        FilterAvailableItems();
         SpawnObject();
+    }
+
+    void FilterAvailableItems()
+    {
+        availablePrefabs = new List<GameObject>();
+
+        foreach (GameObject prefab in prefabsToSpawn)
+        {
+            Item itemComponent = prefab.GetComponent<Item>();
+            if (itemComponent != null && itemComponent.itemAvailable)
+            {
+                availablePrefabs.Add(prefab);
+            }
+        }
+
+        if (availablePrefabs.Count == 0)
+        {
+            Debug.LogError("No available items to spawn!");
+        }
     }
 
     void SpawnObject()
@@ -23,9 +45,9 @@ public class SpawnObjects : MonoBehaviour
             return;
         }
 
-        if (prefabsToSpawn.Count == 0)
+        if (availablePrefabs.Count == 0)
         {
-            Debug.LogError("No prefabs assigned to spawn!");
+            Debug.LogError("No available prefabs to spawn!");
             return;
         }
 
@@ -71,8 +93,8 @@ public class SpawnObjects : MonoBehaviour
 
     GameObject GetRandomPrefab()
     {
-        int randomIndex = Random.Range(0, prefabsToSpawn.Count);
-        return prefabsToSpawn[randomIndex];
+        int randomIndex = Random.Range(0, availablePrefabs.Count);
+        return availablePrefabs[randomIndex];
     }
 
     Vector3 GetRandomPositionInBox(GameObject prefab)
@@ -97,13 +119,6 @@ public class SpawnObjects : MonoBehaviour
 
     Bounds GetPrefabBounds(GameObject prefab)
     {
-        // Temporarily instantiate prefab to calculate its bounds
-        //GameObject tempObject = Instantiate(prefab);
-        //Renderer renderer = tempObject.GetComponentInChildren<Renderer>();
-        //Bounds prefabBounds = renderer != null ? renderer.bounds : new Bounds(Vector3.zero, Vector3.zero);
-        //Destroy(tempObject);
-        //return prefabBounds;
-
         // Temporarily instantiate prefab to calculate its bounds
         GameObject tempObject = Instantiate(prefab);
         // Check for any renderer (MeshRenderer, SpriteRenderer, etc.)
