@@ -21,6 +21,15 @@ public class RandomSpawn : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        float randomValue = Random.Range(0f, 100f);
+        if (randomValue <= spawnChance)
+        {
+            SpawnObjectWithLayer();
+        }
+    }
+
     private void SpawnObjectWithLayer()
     {
         if (objectsToSpawn.Length == 0)

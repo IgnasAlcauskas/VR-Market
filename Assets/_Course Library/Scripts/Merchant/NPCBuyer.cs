@@ -40,6 +40,21 @@ public class NPCBuyer : MonoBehaviour
         ChooseItem();
     }
 
+    private void OnEnable()
+    {
+        if (tableItemChecker == null)
+        {
+            tableItemChecker = FindObjectOfType<TableItemChecker>();
+        }
+        
+        walkScript = GetComponent<BasicWalkScript>();
+        if (walkScript == null)
+        {
+            Debug.LogError("NPCBuyer requires BasicWalkScript on the same GameObject!");
+        }
+        ChooseItem();
+    }
+
     private void Update()
     {
         if (walkScript != null && walkScript.inLine && !uiSpawned)

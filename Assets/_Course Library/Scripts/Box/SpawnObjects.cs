@@ -18,6 +18,12 @@ public class SpawnObjects : MonoBehaviour
         SpawnObject();
     }
 
+    void OnEnable()
+    {
+        FilterAvailableItems();
+        SpawnObject();
+    }
+
     void FilterAvailableItems()
     {
         availablePrefabs = new List<GameObject>();

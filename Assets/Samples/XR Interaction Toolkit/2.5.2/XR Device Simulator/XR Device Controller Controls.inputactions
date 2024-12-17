@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Grip",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "c7937c78-cea4-4888-8feb-8d9da13005f2",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Trigger",

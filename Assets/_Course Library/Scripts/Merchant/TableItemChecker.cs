@@ -20,6 +20,12 @@ public class TableItemChecker : MonoBehaviour
         StartCoroutine(CheckItemsWithDelay());
     }
 
+    private void OnEnable()
+    {
+        // Start the coroutine to check items after a delay
+        StartCoroutine(CheckItemsWithDelay());
+    }
+
     // Coroutine to check items with a delay
     private IEnumerator CheckItemsWithDelay()
     {
