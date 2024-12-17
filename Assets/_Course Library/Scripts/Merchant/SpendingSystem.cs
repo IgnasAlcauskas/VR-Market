@@ -92,7 +92,7 @@ public class SpendingSystem : MonoBehaviour
 
         if (itemText == null || unlockButton == null)
         {
-            Debug.LogError("Required components (ItemText or UnlockButton) are missing in the prefab.");
+            //Debug.LogError("Required components (ItemText or UnlockButton) are missing in the prefab.");
             continue;
         }
 
@@ -141,7 +141,7 @@ public class SpendingSystem : MonoBehaviour
 
     public void LoadGameSceneByIndex()
     {   
-        SceneManager.LoadScene(1); 
+        SceneManager.LoadScene(0); 
     }
 }
 

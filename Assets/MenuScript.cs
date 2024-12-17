@@ -7,7 +7,7 @@ public class MenuScript : MonoBehaviour
     public void Play()
 	{
 		Debug.Log("Play PRESSED");
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 	}
 
 	public void QuitGame()
@@ -19,6 +19,6 @@ public class MenuScript : MonoBehaviour
 	public void QuitToMainMenu()
 	{
 		Debug.Log("QuitToMainMenu PRESSED");
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(0);
 	}
 }
