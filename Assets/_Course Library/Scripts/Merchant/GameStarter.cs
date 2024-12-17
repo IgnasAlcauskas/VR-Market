@@ -21,9 +21,21 @@ public class GameStarter : MonoBehaviour
     public GameObject startButton; // Button to start the game (for XR interaction)
     public TMP_Text timerText; // Text to display the countdown
 
+    [Header("End Round Action")]
+    public GameObject objectToActivateAfterRound; // GameObject to activate when the round ends
+
     private bool isGameRunning = false;
 
     private void Start()
+    {
+        currentTimer = roundDuration;
+
+        // Ensure the initial state of all game elements
+        SetActionElementsActive(false); 
+        SetElementsActive(elementsToDisableAndReenable, true); // Enable re-enabled elements at the start
+    }
+
+    private void OnEnable()
     {
         currentTimer = roundDuration;
 
@@ -74,6 +86,12 @@ public class GameStarter : MonoBehaviour
         SetActionElementsActive(false); // Deactivate action elements
         SetElementsActive(elementsToDisableAndReenable, true); // Re-enable specific elements
         ClearItemsWithTags(); // Remove items with specified tags
+
+        // Activate the specified GameObject after the round ends
+        if (objectToActivateAfterRound != null)
+        {
+            objectToActivateAfterRound.SetActive(true);
+        }
 
         startButton.SetActive(true); // Reactivate the start button for the next round
     }
