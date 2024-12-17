@@ -44,7 +44,6 @@ public class BasicWalkScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AAA");
         if (other.gameObject.CompareTag("DeleteNpc"))
         {
             Destroy(gameObject);
